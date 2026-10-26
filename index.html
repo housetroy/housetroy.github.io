@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pokédex Explorer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Pokédex Explorer</h1>
+    <p class="subtitle">Fetch Pokémon from the PokéAPI and see their types, height, weight, abilities, and base stats.</p>
+  </header>
+
+  <main>
+    <section class="controls">
+      <!-- Main requirement: button that fetches the data -->
+      <button id="fetchBtn" class="btn">Fetch Pokémon</button>
+
+      <!-- Extra credit: search box + its own button -->
+      <div class="search">
+        <input type="text" id="searchInput" placeholder="Name or number (e.g. pikachu or 25)">
+        <button id="searchBtn" class="btn btn-secondary">Search</button>
+      </div>
+    </section>
+
+    <!-- Loading, success, and error messages are shown here (not in the console) -->
+    <p id="status" class="status" role="status"></p>
+
+    <!-- The fetched Pokémon are displayed in this div as cards -->
+    <div id="pokemonContainer" class="grid"></div>
+  </main>
+
+  <footer>
+    Data provided by <a href="https://pokeapi.co" target="_blank" rel="noopener">PokéAPI</a>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
