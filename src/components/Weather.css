@@ -1,0 +1,143 @@
+/* ---------- Page headings ---------- */
+.app-title {
+    font-weight: 700;
+    color: #2f4680;
+}
+.subtitle {
+    color: #4a4a6a;
+}
+.section-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #2f4680;
+    margin-bottom: 1rem;
+}
+
+/* ---------- Search bar (rounded, like the original design) ---------- */
+.search-bar,
+.search-message {
+    max-width: 560px;
+}
+.search-bar .form-control {
+    border: none;
+    border-radius: 40px 0 0 40px;
+    padding-left: 25px;
+    color: #626262;
+    background: #ebfffc;
+}
+.search-bar .btn {
+    border-radius: 0 40px 40px 0;
+    padding-right: 25px;
+}
+/* Turns the dark search.png icon white so it shows on the blue button */
+.search-icon {
+    width: 18px;
+    filter: brightness(0) invert(1);
+}
+
+/* ---------- List header: title on the left, sort dropdown on the right ---------- */
+.list-header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 1rem;
+}
+.sort-select {
+    width: auto;
+}
+
+/* ---------- Filter buttons ---------- */
+.filter-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 1.5rem;
+}
+
+/* ---------- One weather card (the original purple gradient) ---------- */
+.weather-card {
+    border: none;
+    border-radius: 16px;
+    color: #fff;
+    background-image: linear-gradient(45deg, #2f4680, #500ae4);
+    box-shadow: 0 6px 18px rgba(47, 70, 128, 0.25);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.weather-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(47, 70, 128, 0.35);
+}
+
+/* The card background changes with the weather condition */
+.condition-clear {
+    background-image: linear-gradient(45deg, #d35400, #f39c12);
+}
+.condition-clouds {
+    background-image: linear-gradient(45deg, #485563, #7f8c9a);
+}
+.condition-rain,
+.condition-drizzle {
+    background-image: linear-gradient(45deg, #1e3c72, #2a5298);
+}
+.condition-thunderstorm {
+    background-image: linear-gradient(45deg, #232526, #414345);
+}
+.condition-snow {
+    background-image: linear-gradient(45deg, #4b6cb7, #6a8fd8);
+}
+
+/* ---------- Inside a card ---------- */
+.weather-icon {
+    width: 100px;
+    margin: 10px 0;
+}
+.temperature {
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1;
+    margin: 0;
+}
+.location {
+    font-size: 1.4rem;
+    margin: 8px 0 2px;
+}
+.description {
+    text-transform: capitalize;
+    margin-bottom: 4px;
+    opacity: 0.95;
+}
+.details {
+    font-size: 0.9rem;
+    opacity: 0.85;
+}
+
+/* Humidity and wind speed row at the bottom of the card */
+.weather-data {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 12px;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+}
+.stat {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    text-align: left;
+    font-size: 1.1rem;
+}
+.stat p {
+    margin: 0;
+}
+.stat span {
+    display: block;
+    font-size: 0.8rem;
+    opacity: 0.85;
+}
+.stat img {
+    width: 20px;
+    margin-top: 4px;
+}

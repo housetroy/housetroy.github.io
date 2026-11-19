@@ -1,0 +1,5 @@
+/* Global page styles. Bootstrap (imported in main.jsx) handles the CSS reset. */
+body {
+    min-height: 100vh;
+    background: #e2d4ff;
+}
