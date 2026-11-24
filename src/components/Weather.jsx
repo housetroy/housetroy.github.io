@@ -23,23 +23,22 @@ const CITIES = [
     "Dubai,AE", "Mumbai,IN", "Singapore,SG", "Tokyo,JP", "Sydney,AU",
 ];
 
-// OpenWeather icon codes -> our own images ("d" = day, "n" = night)
+// OpenWeather icon codes
 const allIcons = {
-    "01d": clear_icon, "01n": clear_icon,     // clear sky
-    "02d": cloud_icon, "02n": cloud_icon,     // few clouds
-    "03d": cloud_icon, "03n": cloud_icon,     // scattered clouds
-    "04d": drizzle_icon, "04n": drizzle_icon, // broken clouds
-    "09d": rain_icon, "09n": rain_icon,       // shower rain
-    "10d": rain_icon, "10n": rain_icon,       // rain
-    "11d": rain_icon, "11n": rain_icon,       // thunderstorm
-    "13d": snow_icon, "13n": snow_icon,       // snow
-    "50d": cloud_icon, "50n": cloud_icon,     // mist / fog
+    "01d": clear_icon, "01n": clear_icon,     
+    "02d": cloud_icon, "02n": cloud_icon,     
+    "03d": cloud_icon, "03n": cloud_icon,     
+    "04d": drizzle_icon, "04n": drizzle_icon, 
+    "09d": rain_icon, "09n": rain_icon,       
+    "10d": rain_icon, "10n": rain_icon,       
+    "11d": rain_icon, "11n": rain_icon,       
+    "13d": snow_icon, "13n": snow_icon,       
+    "50d": cloud_icon, "50n": cloud_icon,     
 };
 
 // Fetch the current weather for ONE city.
-// Returns a simplified object with just the fields the cards need,
-// or null if the API says the city doesn't exist (404).
-// Throws an Error for anything else (bad API key, no internet) so the caller can show it.
+// Returns an object with the fields the cards need, or null if the API says the city doesn't exist (404).
+// Throws an error for anything else (bad API key, no internet) so the caller can show it.
 const fetchCity = async (cityName) => {
     const url = `${BASE_URL}?q=${encodeURIComponent(cityName)}&units=imperial&appid=${API_KEY}`;
     const response = await fetch(url);
@@ -90,7 +89,7 @@ const SORT_OPTIONS = [
     { id: "name", label: "Name (A–Z)" },
 ];
 
-// Returns a NEW sorted array. The original isn't changed, because React state shouldn't be mutated.
+// Returns a new sorted array. The original isn't changed, because React state shouldn't be mutated.
 const sortCities = (cities, sortBy) => {
     const sorted = [...cities];
 
@@ -155,7 +154,7 @@ const Weather = () => {
         };
     }, []);
 
-    // Fetch ONE city from the API using whatever is typed in the search box
+    // Fetch one city from the API using whatever is typed in the search box
     const searchCity = async () => {
         const term = searchTerm.trim();
 
@@ -200,7 +199,7 @@ const Weather = () => {
                 <p className="subtitle">Current conditions in 20 cities. Search below for any other city.</p>
             </header>
 
-            {/* Search box and search button */}
+            /* Search box and search button */
             <SearchBar
                 value={searchTerm}
                 onChange={setSearchTerm}
@@ -208,7 +207,7 @@ const Weather = () => {
                 searching={searching}
             />
 
-            {/* Search result, or a "not found" message */}
+            /* Search result, or a "not found" message */
             {message && (
                 <Alert variant={message.variant} className="search-message mx-auto mt-3">
                     {message.text}
@@ -226,7 +225,7 @@ const Weather = () => {
                 </section>
             )}
 
-            {/* All 20 cities, with filter buttons and a sort dropdown */}
+            /* All 20 cities, with filter buttons and a sort dropdown */
             <section className="mt-5">
                 <div className="list-header">
                     <h2 className="section-title mb-0">
